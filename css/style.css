@@ -810,7 +810,8 @@ a:hover {
 .but{
   position: absolute;
   bottom: 15%;
-  left: 35%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 /*======================================
 //--//-->   TESTIMONIALS
