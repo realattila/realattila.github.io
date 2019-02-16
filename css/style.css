@@ -804,7 +804,14 @@ a:hover {
   color:black;
   background-color: black;
 }
-
+.package{
+  height: 600px;
+}
+.but{
+  position: absolute;
+  bottom: 15%;
+  left: 35%;
+}
 /*======================================
 //--//-->   TESTIMONIALS
 ======================================*/
