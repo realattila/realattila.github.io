@@ -3,32 +3,33 @@
   font-family: IRANSans;
   font-style: normal;
   font-weight: bold;
-  src: url('font/woff/IRANSansWeb_Bold.woff') format('woff');   /* All Major Browsers */
+  src: url('css/fonts/IRANSansWeb_Bold.woff') format('woff');   /* All Major Browsers */
 }
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 500;
-  src: url('font/woff/IRANSansWeb_Medium.woff') format('woff');   /* All Major Browsers */
+  src: url('css/fonts/IRANSansWeb_Medium.woff') format('woff');   /* All Major Browsers */
 }
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 300;
-  src: url('font/woff/IRANSansWeb_Light.woff') format('woff');   /* All Major Browsers */
+  src: url('css/fonts/IRANSansWeb_Light.woff') format('woff');   /* All Major Browsers */
 }
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: 200;
-  src:url('font/woff/IRANSansWeb_UltraLight.woff') format('woff');   /* All Major Browsers */
+  src:url('css/fonts/IRANSansWeb_UltraLight.woff') format('woff');   /* All Major Browsers */
 }
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: normal;
-  src: url('font/woff/IRANSansWeb.woff') format('woff');   /* All Major Browsers */
+  src: url('css/fonts/IRANSansWeb.woff') format('woff');   /* All Major Browsers */
 }
+
 
 
 
@@ -43,6 +44,7 @@ body {
   direction: rtl;
   text-align: right;
   font-family: IRANSans;
+  ;
 }
 
 h1,
