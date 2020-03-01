@@ -1,11 +1,11 @@
 # About This Theme
-this is html theme, i just remake this theme and try to use different way to create it.
+i just remake this theme and try to use different way to create it.
 
 # Getting Started
 
-!!!first make sure you install npm and nodejs on your maschine(operation system )
+first make sure you install npm and nodejs on your maschine(operation system)
 
-use this command for install dependencies
+use this command in your terminal for install dependencies
 ```
 npm install live-server node-sass npm-run-all -g
 ```
