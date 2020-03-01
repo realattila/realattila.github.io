@@ -10,9 +10,9 @@ use this command for install dependencies
 npm install live-server node-sass npm-run-all -g
 ```
 
-you can just run project in your terminal and install packages with this code
+you can just run terminal in your project and run this commad for install packages
 ```
-npm install
+npm install 
 ```
 
 next for run server and sass compiler use this command
@@ -22,7 +22,7 @@ npm start
 
 # License
 
-[licensed by](https://html.design/)
+licensed by [html.design](https://html.design/)
 
 # end
  sorry it`s my first time to create readme.md file and i am weak in writting english :D
