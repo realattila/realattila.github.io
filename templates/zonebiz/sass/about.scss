@@ -1,0 +1,43 @@
+.about {
+    margin-top: 3rem;
+
+    &__head {
+        margin-bottom: 2rem;
+        &::after {
+            width: 6rem;
+            display: block;
+            content: '';
+            position: relative;
+            left: 0;
+            bottom: -1rem;
+            height: 0.4rem;
+            border-bottom: 0.15rem dotted var(--color-dark);
+
+        }
+    }
+    & .col-lg-6 {
+        margin: 1rem auto 2rem auto;
+    }
+    &__list {
+        
+        &__item {
+            position: relative;
+            &::before {
+                content: '‣';
+                font-size: 2rem;
+                position: relative;
+                left: -0.3rem;
+                top:0.2rem;
+                color: var(--color-blue);
+            } 
+        }
+    }
+}
+
+@include res(tab-land) {
+    .about {
+        & .col-lg-6 {
+            margin: 0.5rem auto;
+        }
+    }
+}

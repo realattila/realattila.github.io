@@ -1,0 +1,123 @@
+.footer {
+    background: url('/images/footer-bg.jpg')  no-repeat center;
+    background-size: cover;
+    padding: 3rem 0;
+    &__item {
+        margin-bottom: 2rem;
+        &__head {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        &__content {
+            color: var(--color-white2)
+        }
+
+        &__social-media {
+            margin-top: 1rem;
+            list-style: none;
+            display: flex;
+    
+        }
+        &__social-media-icon {
+            margin: 0 0.5rem;
+        }
+        &__social-media-link {
+            &,
+            &:active,
+            &:visited {
+                font-size: 1.2rem;
+                padding: 0.5rem;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                transition: all 0.3s ease;
+                color: var(--color-white);
+                position: relative;
+                width: 2rem;
+                &:hover {
+                    transform: rotate(360deg);
+                }
+                &.fa-facebook-f {
+                    background-color: var(--color-facebook);
+                    &:hover {
+                        background-color: transparent;
+                        color: var(--color-facebook);
+                    }
+                }
+        
+                &.fa-instagram {
+                    background-color: var(--color-instagram);
+                    &:hover {
+                        background-color: transparent;
+                        color: var(--color-instagram);
+                    }
+                }
+        
+                &.fa-twitter {
+                    background-color: var(--color-twitter);
+                    &:hover {
+                        background-color: transparent;
+                        color: var(--color-twitter);
+                    }
+                }
+        
+                &.fa-linkedin-in {
+                    background-color: var(--color-linkedin);
+                    &:hover {
+                        background-color: transparent;
+                        color: var(--color-linkedin);
+                    }
+                }
+        
+            }   
+
+    
+
+        }
+        &__list {
+            &__item {
+                margin: 0.5rem 0;
+            }
+            &__link {
+                &,
+                &:active,
+                &:visited {
+                    color: var(--color-white2);
+                    &:hover {
+                        color: var(--color-white2);
+                    }
+                    &::before {
+                        content: '→';
+                        color: var(--color-white2);
+                        transform: translateY(-0.1rem);
+                        margin-right: 0.5rem;
+                    }
+                }
+
+            }
+        }
+        &__form {
+            margin-top: 1rem;
+            display: flex;
+            align-items: stretch;
+        }
+        &__input {
+            flex-basis: 85%;
+            border-radius: 0.3rem 0 0 0.3rem;
+            border: none;
+            padding: 0.5rem;
+        }
+        &__submit{
+            flex-basis: 15%;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: none;
+            border-radius: 0 0.3rem 0.3rem 0;
+        }
+    }
+
+    &__copyright {
+        color: var(--color-white2);
+        text-align: center;
+        padding-top: 3rem;
+        border-top: 0.15rem solid var(--color-grey2);
+    }
+}
