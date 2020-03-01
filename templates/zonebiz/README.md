@@ -1,0 +1,28 @@
+# About This Theme
+this is html theme, i just remake this theme and try to use different way to create it.
+
+# Getting Started
+
+!!!first make sure you install npm and nodejs on your maschine(operation system )
+
+use this command for install dependencies
+```
+npm install live-server node-sass npm-run-all -g
+```
+
+you can just run project in your terminal and install packages with this code
+```
+npm install
+```
+
+next for run server and sass compiler use this command
+```
+npm start
+```
+
+# License
+
+[licensed by](https://html.design/)
+
+# end
+ sorry it`s my first time to create readme.md file and i am weak in writting english :D
