@@ -1,7 +1,6 @@
 {
-  "name": "zonebiz2",
+  "name": "zonebiz",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,5 +13,6 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "node-sass": "^4.13.1"
-  }
+  },
+  "description": ""
 }
