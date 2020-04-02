@@ -4,6 +4,15 @@ $(".nav__toggle").click(() => {
     $(".nav__menu").toggleClass("nav__menu--show");
 });
 
+// fixed nav
+$(window).on('scroll', ()=> {
+    if($(window).scrollTop() > 50) {
+        $('.nav').addClass('nav--fixed')
+    }
+    else {
+        $('.nav').removeClass('nav--fixed')
+    }
+})
 
 //Header Slider 
 $('#header_slider').owlCarousel({
