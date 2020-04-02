@@ -1,5 +1,5 @@
 #Demo
-for Watch online demo [Click Here] (https://realattila.github.io/templates/zonebiz/)
+for Watch online demo [Click Here](https://realattila.github.io/templates/zonebiz/)
 
 # About This Theme
 i just remake this theme and try to use different way to create it.
