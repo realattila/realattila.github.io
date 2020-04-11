@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.slider {
+    width: 100%;
+    height: 100%;
+}
+.slide {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: all 0.5s;
+    opacity: 0;
+}
+.active {
+    opacity: 1;
+}
+.animate {
+    animation: animate 1s ;
+}
+h1 {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.btnbox {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    z-index: 100;
+}
+@keyframes animate {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <div class="slide active" style="background-color: blue;"><h1>1</h1></div>
+            <div class="slide" style="background-color: purple;"><h1>2</h1></div>
+            <div class="slide" style="background-color: red;"><h1>3</h1></div>
+            <div class="slide" style="background-color: yellow;"><h1>4</h1></div>
+            <div class="slide" style="background-color: green;"><h1>5</h1></div>
+        </div>
+    </div>
+    <div class="btnbox">
+        <button id="prev">Prev</button>
+        <button id="next">Next</button>
+        <button onclick = showThisImg(0)>1</button>
+        <button onclick = showThisImg(1)>2</button>
+        <button onclick = showThisImg(2)>3</button>
+        <button onclick = showThisImg(3)>4</button>
+        <button onclick = showThisImg(4)>5</button>
+
+    </div>
+
+<script>
+
+
+const slider = document.querySelector('.slider');
+const imges = document.querySelectorAll('.slider .slide');
+
+
+
+const prevBtn = document.querySelector('#prev');
+const nextBtn = document.querySelector('#next');
+
+let counter = 0;
+
+const size  = 100;
+console.log(slider);
+
+const showThisImg = (counter2) => {
+    slider.style.transform = 'translateY(' + (-size * counter2) + 'vh)';
+    slider.style.transition = 'none';
+    showImg(counter2);
+}
+
+const showImg =  (counter) => {
+    const imgList = Array.from(imges);
+    imgList.map(img => {
+        img.classList.remove('active')
+        img.classList.remove('animate')
+    })
+    imgList[counter].classList.add('active');
+
+}
+
+nextBtn.addEventListener('click', () => {
+    if(counter === 4) {
+        if(counter === 4) counter = -1;
+        counter++;
+        slider.style.transform = 'translateY(' + (-size * counter) + 'vh)';
+        slider.style.transition = 'none';
+        showImg(counter);
+        return true;
+    }
+
+    if(counter === 4) counter = -1;
+    counter ++;
+
+    slider.style.transition = 'transform 0.4s ease-in-out';
+    slider.style.transform = 'translateY(' + (-size * counter) + 'vh)';
+    showImg(counter);
+
+
+});
+
+prevBtn.addEventListener('click', ()=> {
+    if(counter === 0) {
+        if(counter === 0) counter = 5;
+        counter --;
+        slider.style.transition =  'none';
+        slider.style.transform = 'translateY(' + (-size * counter) + 'vh)';
+        showImg(counter);
+        return true;
+    }
+
+    if(counter === 0) counter = 5;
+    counter --;
+
+    slider.style.transition =  'transform 0.4s ease-in-out';
+    slider.style.transform = 'translateY(' + (-size * counter) + 'vh)';
+
+ 
+});
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

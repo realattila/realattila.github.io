@@ -1,0 +1,107 @@
+.hire {
+    width: 75%;
+    & h2 {
+        color: var(--color-white);
+        font-size: 2rem;
+        text-align: center;
+    }
+    &__options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+        &--row-1, &--row-2, &--row-3 {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+    }
+    &__option {
+        width: 33%;
+        height: 5rem;
+        margin-right: 2rem;
+        & input {
+            display: none;
+            &:checked {
+                & ~ label {
+                    background-color: var(--color-primary);
+                    border-color: var(--color-primary);
+                    & svg {
+                        opacity: 1;
+                        transform: translateX(0);
+                        width: 1rem;
+                    }
+                }
+            }
+        }
+        & label {
+            user-select: none;
+            cursor: pointer;
+            color: var(--color-white);
+            font-size: 1.3rem;
+            border: 0.1rem solid var(--color-white);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease-out;
+        }   
+        & svg {
+            width: 0rem;
+            margin-right: 1rem;
+            fill: var(--color-white);
+            opacity: 0;
+            transition: all 0.2s ease-out;
+            transform: translateX(-1rem);
+        }
+    }
+    &__inputs {
+        margin: 0 auto;
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+    }
+    &__input {
+        width: 45%;
+        border-bottom: 0.1rem solid var(--color-white);
+        position: relative;
+        & input{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border:none;
+            outline: none;
+            background-color: transparent;
+            font-size: 3rem;
+            color: var(--color-white);
+            &:focus {
+                & ~ label {
+                    font-size: 1rem;
+                    top: -1.5rem;
+                }
+            }
+        }
+        & label {
+            position: absolute;
+            font-weight: 200;
+            top: 30%;
+            left: 0;
+            transition: all 0.2s ease-out;
+        }
+    }
+    &__submit {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        font-size: 1.5rem;
+        padding: 1rem 7rem;
+        text-transform: uppercase;
+        margin-top: 4rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}

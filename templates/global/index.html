@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body onkeyup="bodyKeyPress(event)" id="body">
+    <ul class="menu">
+        <li onclick="menuSelector(1)" class="menu__item menu__item--active">
+            Home
+        </li>
+        <li onclick="menuSelector(2)" class="menu__item">
+            Works
+        </li>
+        <li onclick="menuSelector(3)" class="menu__item">
+            About
+        </li>
+        <li onclick="menuSelector(4)" class="menu__item">
+            Contact
+        </li>
+        <li onclick="menuSelector(5)" class="menu__item">
+            Hire Us
+        </li>
+    </ul>
+
+    <div class="perspective">
+        <ul class="line">
+            <li key='1' onclick="lineSelector(1)" class="line__item line__item--active">Home</li>
+            <li key='2' onclick="lineSelector(2)"  class="line__item">Works</li>
+            <li key='3' onclick="lineSelector(3)" class="line__item">About</li>
+            <li key='4' onclick="lineSelector(4)" class="line__item">Contact</li>
+            <li key='5' onclick="lineSelector(5)" class="line__item">Hire Us</li>
+        </ul>
+        <header class="header">
+            <a href="#" class="header__logo">
+                <img src="/img//logo.png" alt="logo">
+                Global
+            </a>
+            <div class="header__toggle">
+                <span></span>
+            </div>
+        </header>
+        <div class="container">
+            <div class="wrapper">
+                <ul class="content-list">
+                    <li class="item item--active">
+                        <section class="item__sec home">
+                            <div class="home__banner">
+                                <h1>
+                                    Your next
+                                    <br>
+                                    interactive
+                                    <br>
+                                    experience
+                                </h1>
+                                <button class="home__btn">
+                                    HIRE US
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 492.004 492.004"  xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
+                                                    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002
+                                                    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864
+                                                    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872
+                                                    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <img class="home__img" src="img/introduction-visual.png" alt="introduction-visual">
+                            </div>
+                            <div class="home__options">
+                                <a href="#" class="home__option">
+                                    <h3>
+                                        Metiew & Smith
+                                    </h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+                                    </p>
+                                </a>
+                                <a href="#" class="home__option">
+                                    <h3>
+                                        Fantasy interactive
+                                    </h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+                                    </p>
+                                </a>
+                                <a href="#" class="home__option">
+                                    <h3>
+                                        Paul & shark
+                                    </h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+                                    </p>
+                                </a>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="item">
+                        <section class="item__sec work">
+                            <h1>
+                                Selected work
+                            </h1>
+                            <div class="work__slide">
+                                <ul class="work__list">
+                                    <li class="work__list__li">
+                                        <a href="#" class="work__list__item">
+                                            <img src="/img/work-victory.jpg" alt="">
+                                            <h3>
+                                                Victory
+                                            </h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+                                            </p>
+                                        </a>                                            
+                                    </li>
+                                    <li class="work__list__li">
+                                        <a href="#" class="work__list__item work__list__item--active">
+                                            <img src="/img/work-metiew-smith.jpg" alt="">
+                                            <h3>
+                                                Metiew & Smith
+                                            </h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+                                            </p>
+                                        </a>    
+                                    </li>
+                                    <li class="work__list__li">
+                                        <a href="#" class="work__list__item ">
+                                            <img src="/img/work-alex-nowak.jpg" alt="">
+                                            <h3>
+                                                Alex nowak
+                                            </h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <button class="work__btn work__btn--prev">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 492.004 492.004"  xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
+                                                    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002
+                                                    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864
+                                                    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872
+                                                    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <button class="work__btn work__btn--next">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 492.004 492.004"  xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
+                                                    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002
+                                                    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864
+                                                    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872
+                                                    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="item">
+                        <section class="item__sec about">
+                            <div class="about__banner">
+                                <h2>
+                                    We
+                                    <br>
+                                    believe in
+                                    <br>
+                                    passionate
+                                    <br>
+                                    people
+                                </h2>
+                                <a href="#" class="about__btn">
+                                    career
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    viewBox="0 0 492.004 492.004"  xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136
+                                                    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002
+                                                    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864
+                                                    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872
+                                                    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <img class="about__img" src="/img/about-visual.png" alt="about-visual">
+                            </div>
+                            <div class="about__options">
+                                <a href="#" class="about__option">
+                                    <h3>
+                                        Winners
+                                    </h3>
+                                </a>
+                                <a href="#" class="about__option">
+                                    <h3>
+                                        Philosophy
+                                    </h3>
+                                </a>
+                                <a href="#" class="about__option">
+                                    <h3>
+                                        History
+                                    </h3>
+                                </a>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="item">
+                        <section class="item__sec contact">
+                            <div class="contact__background"></div>
+                            <div class="contact__modal">
+                                <div class="contact__modal__info">
+                                    <p>
+                                        Gonbad, Golestan, Iran
+                                    </p>
+                                    <a href="mailto:98atila@gmail.cm">98atila@gmail.com</a>
+                                    <a href="tel:+989038276860">+98 903 827 6860</a>
+                                </div>
+                                <ul class="contact__modal__options">
+                                    <li class="contact__modal__option">
+                                        <a href="#" class="contact__modal__link contact__modal__link--telegram">
+                                            Telegram
+                                        </a>
+                                    </li>
+                                    <li class="contact__modal__option">
+                                        <a href="#" class="contact__modal__link contact__modal__link--instagram">
+                                            Instagram
+                                        </a>
+                                    </li>
+                                    <li class="contact__modal__option">
+                                        <a href="#" class="contact__modal__link contact__modal__link--contact">
+                                            Contact us
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="item">
+                        <section class="item__sec hire">
+                            <h2>
+                                You want me to do
+                                <form action="#" class="hire__form">
+                                    <div class="hire__options">
+                                        <div class="hire__options--row-1">
+                                            <div class="hire__option">
+                                                <input type="checkbox" name="opt-1" id="opt-1">
+                                                <label for="opt-1">
+                                                    <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" viewBox="0 0 515.556 515.556"  xmlns="http://www.w3.org/2000/svg"><path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/></svg>
+                                                    App Design
+                                                </label>
+                                            </div>
+                                            <div class="hire__option">
+                                                <input type="checkbox" name="opt-2" id="opt-2">
+                                                <label for="opt-2">
+                                                    <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" viewBox="0 0 515.556 515.556"  xmlns="http://www.w3.org/2000/svg"><path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/></svg>
+                                                    Graphic Design
+                                                </label>
+                                            </div>
+                                            <div class="hire__option">
+                                                <input type="checkbox" name="opt-3" id="opt-3">
+                                                <label for="opt-3">
+                                                    <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" viewBox="0 0 515.556 515.556"  xmlns="http://www.w3.org/2000/svg"><path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/></svg>
+                                                    Motion Design
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="hire__options--row-2">
+                                            <div class="hire__option">
+                                                <input type="checkbox" name="opt-4" id="opt-4">
+                                                <label for="opt-4">
+                                                    <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" viewBox="0 0 515.556 515.556"  xmlns="http://www.w3.org/2000/svg"><path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/></svg>    
+                                                    UX Design
+                                                </label>
+                                            </div>
+                                            <div class="hire__option">
+                                                <input type="checkbox" name="opt-5" id="opt-5">
+                                                <label for="opt-5">
+                                                    <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" viewBox="0 0 515.556 515.556"  xmlns="http://www.w3.org/2000/svg"><path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/></svg>
+                                                    Webdegin
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="hire__options--row-3">
+                                            <div class="hire__option">
+                                                <input type="checkbox" name="opt-6" id="opt-6">
+                                                <label for="opt-6">
+                                                    <svg id="Capa_1" enable-background="new 0 0 515.556 515.556" viewBox="0 0 515.556 515.556"  xmlns="http://www.w3.org/2000/svg"><path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"/></svg>
+                                                    Marketion
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hire__inputs">
+                                        <div class="hire__input">
+                                            <input type="text" name="name" id="input-name">
+                                            <label for="input-name">Name</label>
+                                        </div>
+                                        <div class="hire__input">
+                                            <input type="text" name="email" id="input-email">
+                                            <label for="input-email">Email</label>
+                                        </div>
+                                    </div>
+                                    <button class="hire__submit" type="submit">Send Request</button>
+                                </form>
+                            </h2>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<script src="js/main.js"></script>
+</body>
+</html>

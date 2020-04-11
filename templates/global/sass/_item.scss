@@ -1,0 +1,25 @@
+.item {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0s ease-out 0.5s;
+    &__sec {
+        height: auto;
+        min-width: 70%;
+        max-width: 70%;
+    }
+
+    &--active {
+        opacity: 1;
+        z-index: 10;
+        transition: all 0s ease-out 0.5s;
+
+    }
+}
