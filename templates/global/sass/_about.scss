@@ -102,13 +102,13 @@
                 margin-right: 3rem;
             }
             &:nth-child(1) {
-                background-image:url('./img/about-winners.jpg') ;
+                background-image:url('img/about-winners.jpg') ;
             }
             &:nth-child(2){
-                background-image: url('./img/about-philosophy.jpg');
+                background-image: url('img/about-philosophy.jpg');
             }
             &:nth-child(3){
-                background-image: url('./img/about-history.jpg');
+                background-image: url('img/about-history.jpg');
             }
             & h3 {
                 color: var(--color-white);
