@@ -1,0 +1,15 @@
+.body {
+  background-color: var(--color-body);
+  color: var(--color-text);
+  position: relative;
+}
+.backgroundGradient {
+  height: 100dvh;
+  width: 100dvw;
+  background: linear-gradient(135deg, var(--color-red), var(--color-primary));
+  border-radius: 100%;
+  filter: blur(10rem);
+  position: fixed;
+  top: -20dvh;
+  left: -30dvw;
+}
