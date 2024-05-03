@@ -7,6 +7,7 @@ import { APP_KEYS } from "@/utils/keys";
 import { serverTranslation } from "@/i18n";
 import { cookies } from "next/headers";
 import { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export default async function RootLayout({
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css'></link>
+        <GoogleAnalytics gaId='G-GWN8PSR9VR' />
       </head>
 
       <body
