@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import i18next from "i18next";
 import { initReactI18next, useTranslation as useTranslationOrg } from "react-i18next";
 import { getOptions, i18nextNS, languages } from "./settings";
+
 import main from "./locales/en/main.json";
+import mainLayout from "./locales/en/main-layout.json";
+import blogPostsEcamScript2023 from "./locales/en/blog-posts-ecam-script-2023.json";
+import blogPost from "./locales/en/blog-post.json";
 
 const runsOnServerSide = typeof window === "undefined";
 
@@ -19,6 +23,9 @@ void i18next.use(initReactI18next).init({
   resources: {
     en: {
       main,
+      mainLayout,
+      blogPost,
+      blogPostsEcamScript2023,
     },
   },
 });

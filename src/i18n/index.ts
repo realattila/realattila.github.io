@@ -3,12 +3,18 @@ import { initReactI18next } from "react-i18next/initReactI18next";
 import { getOptions, i18nextNS } from "./settings";
 
 import main from "./locales/en/main.json";
+import mainLayout from "./locales/en/main-layout.json";
+import blogPostsEcamScript2023 from "./locales/en/blog-posts-ecam-script-2023.json";
+import blogPost from "./locales/en/blog-post.json";
 
 const initI18next = async (lng: string | undefined, ns: string | undefined) => {
   const i18nInstance = createInstance({
     resources: {
       en: {
         main,
+        mainLayout,
+        blogPost,
+        blogPostsEcamScript2023,
       },
     },
   });

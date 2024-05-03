@@ -1,24 +1,20 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import styles from "./header.module.scss";
 import APP_ASSETS from "@/assets";
 import { APP_KEYS, APP_KEYS_VALUES } from "@/utils/keys";
 import Link from "next/link";
 import { useTranslation } from "@/i18n/client";
-import useStoreApp from "@/store/app";
 import { clsx } from "clsx";
 import Icons from "@/components/icons";
-import Button from "@/components/common/button";
-import { useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import jsCookie from "js-cookie";
 
 interface HeaderProps {
   theme: string;
 }
 export default function MainLayoutHeader({ theme }: HeaderProps) {
-  const { t } = useTranslation("en", "main", {
-    keyPrefix: "mainLayout.header",
+  const { t } = useTranslation("en", "mainLayout", {
+    keyPrefix: "header",
   });
 
   const [showMenu, setShowMenu] = useState(false);
@@ -33,9 +29,9 @@ export default function MainLayoutHeader({ theme }: HeaderProps) {
   };
 
   const ThemeToggler = (
-    <Button
-      noStyle
-      className={styles.themeToggleButton}
+    <button
+      aria-label={t("links.theme")}
+      className={"tw-justify-start tw-flex  tw-px-2  tw-gap-8 tw-items-center tw-text-neutral-800 dark:tw-text-white"}
       onClick={() => {
         changeThemeUrl();
       }}>
@@ -44,87 +40,48 @@ export default function MainLayoutHeader({ theme }: HeaderProps) {
       ) : (
         <Icons.Moon width={24} height={24} />
       )}
-    </Button>
+    </button>
   );
 
   return (
-    <header className={styles.header}>
-      <div className={styles.headerContainer}>
+    <header
+      className={
+        "tw-w-full tw-sticky tw-top-0 tw-left-0 tw-h-16 tw-px-4 tw-flex tw-justify-center tw-border-b tw-border-neutral-300 tw-backdrop-blur-md tw-bg-white dark:tw-bg-neutral-800 tw-bg-opacity-60 dark:tw-bg-opacity-60 tw-z-10"
+      }>
+      <div className='tw-mr-auto tw-flex tw-items-center'>
         <Link href={APP_KEYS.ROUTES.HOME({})}>
           <img
-            className={clsx([{ [`${styles.darkLogo}`]: theme === "dark", [`${styles.hideLogo}`]: showMenu }])}
+            className={clsx([{ [`tw-grayscale tw-invert`]: theme === "dark", [`tw-hidden`]: showMenu }])}
             width={48}
             height={48}
             src={APP_ASSETS.IMAGES.ATTILA}
             alt={t("logo")}
           />
         </Link>
-
-        <Button
-          onClick={() => {
-            setShowMenu((pre) => !pre);
-          }}
-          noStyle
-          className={styles.menuToggle}>
-          {showMenu ? <Icons.XMark width={32} height={32} /> : <Icons.Bars3 width={32} height={32} />}
-        </Button>
-
-        <div
-          className={clsx([
-            styles.mobileMenuWrapper,
-            {
-              [`${styles.mobileMenuWrapperOpen}`]: showMenu,
-            },
-          ])}>
-          <nav
-            className={clsx([
-              styles.mobileNav,
-              {
-                [`${styles.mobileNavShow}`]: showMenu,
-              },
-            ])}>
-            <ul className={styles.mobileList}>
-              <li>
-                <a className={styles.listItemLink} href='#home'>
-                  <strong>HOME</strong>
-                </a>
-              </li>
-              <li>
-                <a className={styles.listItemLink} href='#about_me'>
-                  <strong>ABOUT ME</strong>
-                </a>
-              </li>
-              <li>
-                <a className={styles.listItemLink} href='#contact_me'>
-                  <strong>CONTACT ME</strong>
-                </a>
-              </li>
-              {ThemeToggler}
-            </ul>
-          </nav>
-        </div>
-
-        <nav className={styles.nav}>
-          <ul className={styles.list}>
-            <li>
-              <a className={styles.listItemLink} href='#home'>
-                <strong>HOME</strong>
-              </a>
-            </li>
-            <li>
-              <a className={styles.listItemLink} href='#about_me'>
-                <strong>ABOUT ME</strong>
-              </a>
-            </li>
-            <li>
-              <a className={styles.listItemLink} href='#contact_me'>
-                <strong>CONTACT ME</strong>
-              </a>
-            </li>
-            {ThemeToggler}
-          </ul>
-        </nav>
       </div>
+
+      {/* <button
+        onClick={() => {
+          setShowMenu((pre) => !pre);
+        }}
+        className='lg:tw-hidden tw-z-10 tw-text-white  tw-p-2'>
+        {showMenu ? <Icons.XMark width={32} height={32} /> : <Icons.Bars3 width={32} height={32} />}
+      </button> */}
+
+      <nav className={"tw-flex tw-items-center"}>
+        <ul className='tw-list-none tw-flex tw-m-0 tw-p-0 tw-gap-4 tw-items-center'>
+          <li>
+            <a className={navbarItemClass} href='#home'>
+              <strong>{t("links.blog")}</strong>
+            </a>
+          </li>
+
+          <li>{ThemeToggler}</li>
+        </ul>
+      </nav>
     </header>
   );
 }
+
+const navbarItemClass =
+  'tw-capitalize tw-inline-block tw-relative tw-transition-all tw-duration-500 before:tw-content-[""] before:tw-absolute before:tw-bottom-0 before:tw-left-0 before:tw-w-0 before:tw-h-1 before:tw-opacity-0 before:tw-transition-all before:tw-duration-500 before:tw-bg-blue-700 hover:before:tw-w-full hover:before:tw-opacity-100 tw-p-2';

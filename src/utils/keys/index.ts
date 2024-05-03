@@ -5,7 +5,8 @@ type RouteArgs = {
 };
 
 const ROUTES = {
-  HOME: ({ params }: RouteArgs) => `/${params ? params.toString() : ""}`,
+  HOME: ({ params }: RouteArgs) => `/${params ? `?${params.toString()}` : ""}`,
+  BLOG: ({ params }: RouteArgs) => `/blog${params ? `?${params.toString()}` : ""}`,
   custom: ({ pathname, params }: RouteArgs & { pathname: string }) => `${pathname}?${params ? params.toString() : ""}`,
 };
 export const APP_KEYS = { COOKIES, ROUTES };
