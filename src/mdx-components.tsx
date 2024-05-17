@@ -47,6 +47,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
+    InternalLink: ({ children, href }) => (
+      <a
+        href={`${process.env.NEXT_PUBLIC_DOMAIN}${href}`}
+        className={`tw-text-blue-700 active:tw-text-blue-700 visited:tw-text-blue-700 hover:tw-text-blue-700 dark:tw-text-blue-500 dark:hover:tw-text-blue-500 dark:active:tw-text-blue-500 dark:visited:tw-text-blue-500 `}>
+        {children}
+      </a>
+    ),
 
     CodeHeader,
     ...components,

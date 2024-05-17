@@ -70,11 +70,11 @@ export default function MainLayoutHeader({ theme }: HeaderProps) {
 
       <nav className={"tw-flex tw-items-center"}>
         <ul className='tw-list-none tw-flex tw-m-0 tw-p-0 tw-gap-4 tw-items-center'>
-          <li>
-            <a className={navbarItemClass} href='#home'>
+          {/* <li>
+            <a className={navbarItemClass} href={APP_KEYS.ROUTES.BLOG({})}>
               <strong>{t("links.blog")}</strong>
             </a>
-          </li>
+          </li> */}
 
           <li>{ThemeToggler}</li>
         </ul>

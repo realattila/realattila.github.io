@@ -16,8 +16,6 @@ export async function generateMetadata({}): Promise<Metadata> {
     keyPrefix: "mainLayout.metadata",
   });
 
-  const domain = process.env.NEXT_PUBLIC_DOMAIN;
-
   return {
     title: t("title"),
     description: t("description"),

@@ -9,6 +9,7 @@ import main from "./locales/en/main.json";
 import mainLayout from "./locales/en/main-layout.json";
 import blogPostsEcamScript2023 from "./locales/en/blog-posts-ecam-script-2023.json";
 import blogPost from "./locales/en/blog-post.json";
+import pagesHome from "./locales/en/pages-home.json";
 
 const runsOnServerSide = typeof window === "undefined";
 
@@ -26,6 +27,7 @@ void i18next.use(initReactI18next).init({
       mainLayout,
       blogPost,
       blogPostsEcamScript2023,
+      pagesHome,
     },
   },
 });
