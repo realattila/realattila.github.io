@@ -5,11 +5,13 @@ import PathDrawingAnimation from "./title-path-drawn";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@/i18n/client";
 import styles from "./styles.module.css";
+import Icons from "@/components/icons";
 
 export default function MainPageHero() {
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const [afterInitialPage, setAfterInitialPage] = useState(false);
-  const [, setDocumentWidth] = useState(window.innerWidth);
+
+  const [, setDocumentWidth] = useState(0);
   const { t } = useTranslation("en", "pagesHome", { keyPrefix: "hero" });
 
   useEffect(() => {
@@ -25,12 +27,22 @@ export default function MainPageHero() {
   }, []);
 
   useEffect(() => {
-    setAfterInitialPage(true);
+    setTimeout(() => {
+      setAfterInitialPage(true);
+    }, 1000);
   }, []);
 
+  const handleClickArrowDown = () => {
+    const element = document.getElementById("#about_me");
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+    }
+  };
+
   return (
-    <section className='tw-h-[calc(100dvh-64px)] tw-flex tw-justify-center tw-items-center tw-relative'>
-      <div className='tw-flex tw-flex-col tw-gap-8 tw-w-full tw-items-center '>
+    <section className='tw-h-[calc(100dvh-64px)] tw-flex tw-justify-center tw-items-center tw-relative tw-flex-col'>
+      <div className='tw-flex tw-flex-col tw-gap-8 tw-w-full tw-items-center tw-mt-auto'>
         <div className='tw-relative '>
           {afterInitialPage ? (
             <div className='tw-p-3 tw-absolute'>
@@ -39,6 +51,7 @@ export default function MainPageHero() {
           ) : null}
 
           <h1
+            aria-hidden='true'
             className='tw-w-fit tw-text-5xl sm:tw-text-7xl xl:tw-text-9xl tw-font-medium'
             style={{ visibility: "hidden" }}
             ref={h1Ref}>
@@ -51,14 +64,16 @@ export default function MainPageHero() {
         </h2>
       </div>
 
-      <div className='tw-absolute tw-left-0 tw-top-0 tw-w-full tw-h-full tw-overflow-hidden'>
+      <div
+        id='scroll_to_view_hero'
+        className='tw-absolute tw-left-0 tw-top-0 tw-w-full tw-h-full tw-overflow-hidden -tw-z-10'>
         <svg
           className={styles.spinner}
           width='100%'
           height='100%'
           viewBox='0 0 66 66'
           xmlns='http://www.w3.org/2000/svg'>
-          <circle fill='transparent' stroke-width='2' cx='60' cy='33' r='30' stroke='url(#gradient)'></circle>
+          <circle fill='transparent' strokeWidth='2' cx='60' cy='33' r='30' stroke='url(#gradient)'></circle>
           <svg
             className={styles.dot}
             width='5px'
@@ -80,6 +95,15 @@ export default function MainPageHero() {
             <circle className='tw-fill-sky-300' cx='33' cy='33' r='8'></circle>
           </svg> */}
         </svg>
+      </div>
+      <div className='tw-mt-auto tw-mb-4'>
+        <button
+          className='tw-animate-bounce'
+          onClick={() => {
+            handleClickArrowDown();
+          }}>
+          <Icons.ArrowDown width={64} height={64} />
+        </button>
       </div>
     </section>
   );

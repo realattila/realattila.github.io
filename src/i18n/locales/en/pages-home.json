@@ -2,5 +2,38 @@
   "hero": {
     "title": "[ATTILA]",
     "description": "Expert web developer"
+  },
+  "aboutMe": {
+    "title": "ABOUT ME :-)",
+    "content": "I am a dedicated problem solver and creative thinker, passionate about programming and shaping a 6-year journey in the tech world. Skilled in frontend development, leadership, and project management.",
+    "intro": {
+      "name": {
+        "title": "Name:",
+        "content": "Attila peykargalou"
+      },
+      "expert": {
+        "title": "Expert:",
+        "content": "FrontEnd developer"
+      },
+      "email": {
+        "title": "email",
+        "content": "realattila2[at]pm.me"
+      },
+      "linkedIn": {
+        "title": "LinkedIn:"
+      },
+      "socialMedia": {
+        "title": "SocialMedia: "
+      }
+    },
+    "skills": {
+      "htmlAndCss": "HTML & CSS",
+      "javaScriptAndTypescriptAndReact": "JAVASCRIPT & TYPESCRIPT & REACT",
+      "nodeJsAndExpressJsAndMongoDb": "NODE.JS & EXPRESS.JS & MONGODB",
+      "git": "GIT",
+      "problemSolvingAndCreativity": "PROBLEM SOLVING & CREATIVITY",
+      "softSkillAndTeamPlayer": "SOFT SKILL & TEAM PLAYER",
+      "linuxAndDevops": "LINUX & DEVOPS"
+    }
   }
 }
