@@ -3,7 +3,6 @@
 import { clsx } from "clsx";
 import styles from "./styles.module.css";
 import { useEffect, useRef } from "react";
-import "intersection-observer";
 
 import SkillBar from "./skill-bar";
 import Icons from "@/components/icons";
