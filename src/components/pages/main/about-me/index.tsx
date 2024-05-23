@@ -56,7 +56,7 @@ export default function HomePageAboutMe() {
   return (
     <div
       id='#about_me'
-      className='tw-flex tw-justify-center tw-min-h-[calc(100dvh-64px)] tw-py-8 tw-pt-20 tw-items-center tw-overflow-hidden'>
+      className='tw-flex tw-justify-center tw-min-h-[calc(100svh-64px)] tw-py-8 tw-pt-20 tw-items-center tw-overflow-hidden'>
       <div className='tw-container tw-flex tw-flex-col tw-gap-8'>
         <div className={clsx(["tw-text-3xl sm:tw-text-5xl xl:tw-text-7xl", styles.wrapperHead])}>
           <h2 className={clsx([styles.head, styles.headAnimated])}>{t("title")}</h2>
