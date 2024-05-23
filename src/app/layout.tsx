@@ -31,7 +31,7 @@ export default async function RootLayout({
     keyPrefix: "mainLayout.metadata",
   });
   const cookie = cookies();
-  const cookieTheme = cookie.get(APP_KEYS.COOKIES.THEME)?.value || "light";
+  const cookieTheme = cookie.get(APP_KEYS.COOKIES.THEME)?.value || "dark";
 
   return (
     <html lang='en' dir='ltr' className={clsx([{ ["tw-dark"]: cookieTheme === "dark" }])}>
