@@ -3,10 +3,15 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useIsClient, useWindowMatchMedia } from "@/hook";
+import { cn } from "@/lib";
 
 export function InteractiveCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const followerRef = useRef<HTMLDivElement>(null);
+
+  const isClient = useIsClient();
+  const { reduce } = useWindowMatchMedia();
 
   useGSAP(
     () => {
@@ -15,10 +20,6 @@ export function InteractiveCursor() {
 
       const isCoarse = matchMedia("(pointer: coarse)").matches;
       if (isCoarse) return;
-
-      const prefersReduced = matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
 
       const root = document.documentElement;
       root.classList.add("cursor-none");
@@ -41,7 +42,7 @@ export function InteractiveCursor() {
         setFollowerY(followerPos.y);
       };
 
-      if (!prefersReduced) gsap.ticker.add(tick);
+      if (!reduce) gsap.ticker.add(tick);
 
       const onPointerMove = (e: PointerEvent) => {
         if (!e.isPrimary || e.pointerType === "touch") return;
@@ -49,7 +50,7 @@ export function InteractiveCursor() {
         pos.y = e.clientY;
         setCursorX(pos.x);
         setCursorY(pos.y);
-        if (prefersReduced) {
+        if (reduce) {
           setFollowerX(pos.x);
           setFollowerY(pos.y);
         }
@@ -96,7 +97,7 @@ export function InteractiveCursor() {
         document.removeEventListener("pointermove", onPointerMove);
         document.removeEventListener("pointerover", onPointerOver, true);
         document.removeEventListener("pointerout", onPointerOut, true);
-        if (!prefersReduced) gsap.ticker.remove(tick);
+        if (!reduce) gsap.ticker.remove(tick);
         root.classList.remove("cursor-none");
       };
     },
@@ -107,12 +108,22 @@ export function InteractiveCursor() {
     <>
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-3.5 h-3.5 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference will-change-transform"
+        className={cn([
+          "hidden fixed top-0 left-0 w-3.5 h-3.5 bg-white/80 rounded-full pointer-events-none z-[9999] mix-blend-difference will-change-transform",
+          {
+            block: isClient,
+          },
+        ])}
         style={{ transform: "translate(-50%, -50%)" }}
       />
       <div
         ref={followerRef}
-        className="fixed top-0 left-0 w-8 h-8 border-2 border-black dark:border-white rounded-full pointer-events-none z-[9998] will-change-transform"
+        className={cn([
+          "hidden fixed top-0 left-0 w-8 h-8 border-2 border-black/80 dark:border-white/80 rounded-full mix-blend-difference pointer-events-none z-[9998] will-change-transform",
+          {
+            block: isClient,
+          },
+        ])}
         style={{ transform: "translate(-50%, -50%)" }}
       />
     </>
