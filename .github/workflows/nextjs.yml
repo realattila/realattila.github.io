@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: Deploy Next.js site to GitHub Pages
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 1. Checkout repository
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       # 2. Setup Node.js 22
@@ -34,12 +34,11 @@ jobs:
         with:
           version: 9
 
-      # 4. Restore cache for dependencies
-      - name: Restore pnpm store cache
+      # 4. Restore pnpm store cache
+      - name: Cache pnpm store
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.pnpm-store
+          path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
@@ -49,7 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       # 6. Restore Next.js cache
-      - name: Restore Next.js cache
+      - name: Cache Next.js build
         uses: actions/cache@v4
         with:
           path: .next/cache
@@ -57,15 +56,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-
 
-      # 7. Build with Next.js
+      # 7. Build Next.js (Next.js 15, output: "export" در next.config.js)
       - name: Build Next.js
         run: pnpm build
 
-      # 8. Export static HTML (Next.js)
-      - name: Export Next.js static HTML
-        run: npx next export
-
-      # 9. Upload artifact for GitHub Pages
+      # 8. Upload artifact for GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
