@@ -28,9 +28,16 @@ export default function Home() {
         const visible = entries.filter((entry) => entry.isIntersecting);
         if (!visible.length) return;
 
-        const topEntry = visible.reduce((best, entry) =>
-          entry.intersectionRatio > best.intersectionRatio ? entry : best
-        );
+        const viewportCenter = window.innerHeight / 2;
+        const topEntry = visible.reduce((best, entry) => {
+          const bestDistance = Math.abs(
+            best.boundingClientRect.top - viewportCenter
+          );
+          const entryDistance = Math.abs(
+            entry.boundingClientRect.top - viewportCenter
+          );
+          return entryDistance < bestDistance ? entry : best;
+        });
         const id = (topEntry.target as HTMLElement).id;
         if (!id || id === activeIdRef.current) return;
 
@@ -41,7 +48,7 @@ export default function Home() {
           window.dispatchEvent(new HashChangeEvent("hashchange"));
         }
       },
-      { threshold: [0.5, 0.75] }
+      { rootMargin: "-35% 0px -45% 0px", threshold: 0 }
     );
 
     sections.forEach((section) => observer.observe(section));
