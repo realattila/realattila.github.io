@@ -21,17 +21,19 @@ export const Header = () => {
   return (
     <header
       className={cn([
-        "fixed left-0 w-full transition-all duration-500 top-0 border-b-1 border-transparent z-20",
+        "fixed left-0 w-full transition-all duration-500 top-0 border-b border-transparent z-20 h-22.5",
         {
           "dark:border-white/10 border-black/10 shadow-xs bg-black/90":
             isClient && y > 0,
         },
       ])}
     >
-      <div className="w-full h-2 bg-gradient-to-r from-blue-950 via-blue-800 to-blue-600 animate-pulse"></div>
+      <div className="w-full h-2 bg-linear-to-r from-blue-950 via-blue-800 to-blue-600 animate-pulse"></div>
 
       <nav
-        className={cn(["container mx-auto p-3 transition-all duration-500"])}
+        className={cn([
+          "container mx-auto h-full flex justify-center transition-all duration-500 px-4",
+        ])}
       >
         <div className="flex items-center w-full">
           <Link href={"/"}>
