@@ -209,16 +209,16 @@ export const Intro = () => {
         ref={techStackIconsRef}
         className="flex w-full gap-4 justify-center opacity-0 flex-wrap"
       >
-        <DiReact className="w-7 h-7 hover:animate-bounce" />
-        <DiNodejs className="w-7 h-7 hover:animate-bounce" />
-        <DiJavascript1 className="w-7 h-7 hover:animate-bounce" />
-        <DiLinux className="w-7 h-7 hover:animate-bounce" />
-        <DiCss3Full className="w-7 h-7 hover:animate-bounce" />
-        <DiPython className="w-7 h-7 hover:animate-bounce" />
-        <DiGit className="w-7 h-7 hover:animate-bounce" />
-        <DiDocker className="w-7 h-7 hover:animate-bounce" />
-        <DiPostgresql className="w-7 h-7 hover:animate-bounce" />
-        <DiMongodb className="w-7 h-7 hover:animate-bounce" />
+        <DiReact className="w-5 h-5 hover:animate-bounce" />
+        <DiNodejs className="w-5 h-5 hover:animate-bounce" />
+        <DiJavascript1 className="w-5 h-5 hover:animate-bounce" />
+        <DiLinux className="w-5 h-5 hover:animate-bounce" />
+        <DiCss3Full className="w-5 h-5 hover:animate-bounce" />
+        <DiPython className="w-5 h-5 hover:animate-bounce" />
+        <DiGit className="w-5 h-5 hover:animate-bounce" />
+        <DiDocker className="w-5 h-5 hover:animate-bounce" />
+        <DiPostgresql className="w-5 h-5 hover:animate-bounce" />
+        <DiMongodb className="w-5 h-5 hover:animate-bounce" />
       </div>
 
       <div className="flex w-full justify-center">
