@@ -54,7 +54,6 @@ export const Menu = () => {
             return (
               <li key={item.id} role="none" className="m-0 p-2">
                 <a
-                  role="menuitem"
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   onClick={() => setOpen(false)}

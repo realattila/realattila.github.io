@@ -10,12 +10,13 @@ import {
   Experience,
 } from "./_index/components";
 import { Contact } from "./_index/components/contact";
+import { HEADER_ITEMS } from "./_index/components/header/items";
 
 export default function Home() {
   const activeIdRef = useRef<string>("");
 
   useEffect(() => {
-    const sectionIds = ["intro", "about"];
+    const sectionIds = HEADER_ITEMS.map((item) => item.id);
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));

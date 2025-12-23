@@ -1,20 +1,10 @@
-"use client";
-
 import { Geist, Geist_Mono } from "next/font/google";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ThemeProvider } from "@/components/theme-provider";
-import jsCookie from "js-cookie";
 import { APP_CONSTS } from "@/lib";
-import { APP_THEMES } from "@/hook";
+import { APP_THEMES } from "@/lib/themes";
 import { ReactNode } from "react";
-import { SplitText } from "gsap/SplitText";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+import { AppProviders } from "@/components/app-providers";
 
 import "./globals.css";
-
-gsap.registerPlugin(useGSAP, SplitText, MotionPathPlugin, ScrambleTextPlugin);
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +21,6 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const current_theme =
-    jsCookie.get(APP_CONSTS.COOKIES.THEME) || APP_THEMES.DARK;
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -50,15 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme={current_theme}
-          themes={[APP_THEMES.DARK, APP_THEMES.LIGHT]}
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <AppProviders defaultTheme={APP_THEMES.DARK}>{children}</AppProviders>
       </body>
     </html>
   );

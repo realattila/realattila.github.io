@@ -88,7 +88,6 @@ export function NavHoverLockA11y() {
               ref={(el) => {
                 btnRefs.current[idx] = el;
               }}
-              role="menuitem"
               href={item.href}
               aria-current={idx === lockedIndex ? "page" : undefined}
               onPointerEnter={() => previewAt(idx)}
