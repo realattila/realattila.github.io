@@ -17,15 +17,11 @@ export const useWindowMatchMedia = () => {
 
     if ("addEventListener" in media) {
       media.addEventListener("change", handleChange);
-    } else {
-      media.addListener(handleChange);
     }
 
     return () => {
       if ("removeEventListener" in media) {
         media.removeEventListener("change", handleChange);
-      } else {
-        media.removeListener(handleChange);
       }
     };
   }, []);
