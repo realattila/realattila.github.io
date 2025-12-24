@@ -32,7 +32,7 @@ export default function RootLayout({
           as="image"
           type="image/jpeg"
         />
-        <title>[ATTILA] | Professional frontend developer</title>
+        <title>[ATTILA] | Professional Software Engineer</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
